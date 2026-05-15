@@ -8,8 +8,29 @@
   </head>
   <body>
     <div class="container">
+      <a class="link" href="index.html">&laquo; Back</a>
       <h1>Snackbar</h1>
-      <a class="link" href="index.html">Back</a>
+      <form class="form">
+        <label>
+          Delay (ms)
+          <input type="number" name="delay" required />
+        </label>
+
+        <fieldset>
+          <legend>State</legend>
+          <label>
+            <input type="radio" name="state" value="fulfilled" required />
+            Fulfilled
+          </label>
+          <label>
+            <input type="radio" name="state" value="rejected" required />
+            Rejected
+          </label>
+        </fieldset>
+
+        <button type="submit">Create notification</button>
+      </form>
+
       <script type="module" src="./js/2-snackbar.js"></script>
     </div>
   </body>

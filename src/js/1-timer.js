@@ -34,7 +34,7 @@ const options = {
     }
     userSelectedDate = selectedDate;
     startBtn.disabled = false;
-    document.querySelector(`#datetime-picker`).disabled = true;
+   
   },
 };
 
@@ -42,6 +42,7 @@ const options = {
 flatpickr("#datetime-picker", options);
 
 startBtn.addEventListener(`click`, () => {
+   document.querySelector(`#datetime-picker`).disabled = true; 
   if (!userSelectedDate) return;
   startBtn.disabled = true;
   const timerId = setInterval(() => {
@@ -51,7 +52,8 @@ startBtn.addEventListener(`click`, () => {
       clearInterval(timerId);
       document.querySelector(`#datetime-picker`).disabled = false;
       return;
-    }   const { days, hours, minutes, seconds } = convertMs(diff);
+    } const { days, hours, minutes, seconds } = convertMs(diff);
+   
 
   
     daysEl.textContent = addLeadingZero(days);
